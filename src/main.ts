@@ -14,7 +14,7 @@ class DigitalClock {
 
   private createDigit(value: string): HTMLElement {
     const digit = document.createElement('div')
-    digit.className = 'relative w-20 h-32 bg-gray-800 rounded-lg mx-1 perspective-[1000px] overflow-hidden'
+    digit.className = 'relative w-20 h-32 bg-gray-800 rounded-lg mx-1'
     
     const number = document.createElement('div')
     number.className = 'absolute inset-0 flex items-center justify-center text-6xl font-bold text-white'
@@ -39,16 +39,9 @@ class DigitalClock {
 
   private updateDigit(digit: HTMLElement, newValue: string) {
     const current = digit.querySelector('div')
-    if (!current || current.textContent === newValue) return
-    
-    const oldNumber = current.cloneNode(true) as HTMLElement
-    digit.appendChild(oldNumber)
-    current.classList.add('animate-flip')
-    setTimeout(() => {
+    if (current) {
       current.textContent = newValue
-      current.classList.remove('animate-flip')
-      oldNumber.remove()
-    }, 300)
+    }
   }
 
   private updateClock() {
