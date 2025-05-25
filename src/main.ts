@@ -9,22 +9,22 @@ class DigitalClock {
   constructor() {
     // Main container
     this.container = document.createElement('div')
-    this.container.className = 'min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 flex items-center justify-center px-4'
+    this.container.className = 'min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 flex items-center justify-center px-4'
     document.body.appendChild(this.container)
     
     // Content wrapper with max width
     const contentWrapper = document.createElement('div')
-    contentWrapper.className = 'w-full max-w-3xl mx-auto flex flex-col items-center'
+    contentWrapper.className = 'w-full max-w-4xl mx-auto flex flex-col items-center'
     this.container.appendChild(contentWrapper)
 
     // Date display
     this.dateDisplay = document.createElement('div')
-    this.dateDisplay.className = 'text-lg sm:text-xl md:text-2xl text-gray-300 mb-4 sm:mb-5 md:mb-6 font-light tracking-wide text-center'
+    this.dateDisplay.className = 'text-xl sm:text-2xl md:text-3xl text-gray-200 mb-6 sm:mb-8 md:mb-10 font-light tracking-wider text-center text-shadow-glow'
     contentWrapper.appendChild(this.dateDisplay)
 
     // Clock face wrapper
     this.clockFace = document.createElement('div')
-    this.clockFace.className = 'w-full flex flex-row items-center justify-center gap-2 sm:gap-3 md:gap-4 p-4 sm:p-6 md:p-8 rounded-3xl bg-gray-800/30 backdrop-blur-lg shadow-xl'
+    this.clockFace.className = 'w-full flex flex-row items-center justify-center gap-3 sm:gap-4 md:gap-6 p-6 sm:p-8 md:p-10 rounded-3xl bg-gray-800/30 backdrop-blur-xl shadow-2xl'
     contentWrapper.appendChild(this.clockFace)
 
     this.initializeClock()
@@ -33,7 +33,7 @@ class DigitalClock {
 
   private createDigitGroup(values: [string, string]): HTMLElement {
     const group = document.createElement('div')
-    group.className = 'flex flex-row gap-1 sm:gap-2 bg-gray-800/50 backdrop-blur p-2 rounded-2xl'
+    group.className = 'flex flex-row gap-2 sm:gap-3 bg-gray-800/50 backdrop-blur p-3 sm:p-4 rounded-2xl'
     
     group.appendChild(this.createDigit(values[0]))
     group.appendChild(this.createDigit(values[1]))
@@ -43,10 +43,10 @@ class DigitalClock {
 
   private createDigit(value: string): HTMLElement {
     const digit = document.createElement('div')
-    digit.className = 'w-12 sm:w-14 md:w-16 h-20 sm:h-24 md:h-28 relative bg-gray-700/50 rounded-xl overflow-hidden'
+    digit.className = 'w-16 sm:w-20 md:w-24 h-24 sm:h-32 md:h-40 relative bg-gray-700/50 rounded-xl overflow-hidden'
     
     const number = document.createElement('div')
-    number.className = 'absolute inset-0 flex items-center justify-center text-2xl sm:text-3xl md:text-4xl font-bold text-gray-100'
+    number.className = 'absolute inset-0 flex items-center justify-center text-4xl sm:text-6xl md:text-7xl font-bold text-gray-100 font-clock text-shadow-glow'
     number.textContent = value
     
     digit.appendChild(number)
@@ -55,7 +55,7 @@ class DigitalClock {
 
   private createSeparator(): HTMLElement {
     const separator = document.createElement('div')
-    separator.className = 'text-2xl sm:text-3xl md:text-4xl font-light text-gray-400 mx-1'
+    separator.className = 'text-4xl sm:text-6xl md:text-7xl font-light text-gray-300 mx-1 text-shadow-glow'
     separator.textContent = ':'
     return separator
   }
