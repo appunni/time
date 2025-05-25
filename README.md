@@ -114,10 +114,6 @@ The project is automatically deployed to GitHub Pages using GitHub Actions workf
 2. Deploys to GitHub Pages
 3. Makes it available at [https://appunni.github.io/time/](https://appunni.github.io/time/)
 
-## Contributing
-
-Contributions, issues, and feature requests are welcome! Feel free to check [issues page](https://github.com/appunni/time/issues).
-
 ## License
 
 MIT
