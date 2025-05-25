@@ -114,6 +114,14 @@ The project is automatically deployed to GitHub Pages using GitHub Actions workf
 2. Deploys to GitHub Pages
 3. Makes it available at [https://appunni.github.io/time/](https://appunni.github.io/time/)
 
+## Development Approach
+
+This project demonstrates modern AI-assisted development using:
+- GitHub Copilot - AI pair programming assistant
+- Cline - Conversational AI development tool
+
+The combination of these tools enhanced development efficiency while maintaining code quality and best practices.
+
 ## License
 
 MIT
